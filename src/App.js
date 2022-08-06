@@ -50,13 +50,16 @@ function App() {
     //Set winner
     if (playerWon) {
       setWinner("x");
+      return;
     }
     if (computerWon) {
       setWinner("o");
+      return;
     }
 
     if (drawGame) {
       setWinner("draw");
+      return;
     }
 
     //Computer playing
