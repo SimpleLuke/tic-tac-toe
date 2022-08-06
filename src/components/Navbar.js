@@ -5,8 +5,9 @@ const Navbar = (props) => {
   return (
     <nav>
       <img src={logo} alt="logo" />
-      <div>
-        <p>{props.turn} Turn</p>
+      <div className="turn-block">
+        <p className="sign">{props.turn}</p>
+        <p>Turn</p>
       </div>
       <button onClick={props.reset}>
         <img src={resetIcon} alt="reset" />
