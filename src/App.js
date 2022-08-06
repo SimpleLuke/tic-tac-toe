@@ -155,6 +155,8 @@ function App() {
             <Square
               x={square === "x" ? 1 : 0}
               o={square === "o" ? 1 : 0}
+              placed={square !== null ? 1 : 0}
+              turn={turn}
               onClick={() => handleSquareClick(index)}
             />
           ))}

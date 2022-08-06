@@ -69,6 +69,19 @@ div.square {
   border-radius: 10px;
   box-shadow: inset 0px -10px #10212a;
   padding: 24px 28px 32px 28px;
+  position: relative;
+}
+div.square .outline {
+  display: inline-block;
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  height: 40px;
+  width: 40px;
+  opacity: 0;
+}
+div.square:hover .outline {
+  opacity: 1;
 }
 div.square img {
   width: 40px;
