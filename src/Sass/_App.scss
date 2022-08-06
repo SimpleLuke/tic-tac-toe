@@ -2,11 +2,16 @@
 @import "./base/colors";
 @import "./base/typography";
 
+html,
+body {
+  overflow-y: hidden;
+}
+
 body {
   background-color: $bg-clr;
   color: #fff;
   height: 100vh;
-  overflow-y: hidden;
+  position: relative;
 }
 
 nav {
@@ -54,7 +59,7 @@ nav {
 
 main {
   width: 335px;
-  margin: 24px auto 127px;
+  margin: 24px auto;
 }
 
 div.board {
