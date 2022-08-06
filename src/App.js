@@ -155,6 +155,11 @@ function App() {
           {winner === "draw" && <div>Draw!</div>}
         </div>
       </main>
+      <footer>
+        <a href="lukelai.tech">
+          <p>&copy; 2022 Luke Lai</p>
+        </a>
+      </footer>
     </Fragment>
   );
 }

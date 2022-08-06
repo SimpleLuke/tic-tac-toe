@@ -51,6 +51,15 @@ div.square img {
   text-align: center;
 }
 
+footer a {
+  text-decoration: none;
+  color: #dbe8ed;
+  text-align: center;
+}
+footer a p {
+  margin-top: 10px;
+}
+
 *,
 *::before,
 *::after {
