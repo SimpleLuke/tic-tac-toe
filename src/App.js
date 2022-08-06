@@ -1,6 +1,6 @@
 import Board from "./components/Board";
 import Square from "./components/Square";
-import resetIcon from "./assets/icon-restart.svg";
+import Navbar from "./components/Navbar";
 
 import { useState, useEffect, Fragment } from "react";
 
@@ -134,12 +134,8 @@ function App() {
   };
   return (
     <Fragment>
-      <header>
-        <button onClick={handleReset}>
-          <img src={resetIcon} alt="reset" />
-        </button>
-      </header>
       <main>
+        <Navbar reset={handleReset} />
         <Board>
           {squares.map((square, index) => (
             <Square
