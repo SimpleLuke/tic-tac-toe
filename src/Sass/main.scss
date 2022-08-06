@@ -1,0 +1,31 @@
+// base folder
+
+// @import "./base/colors";
+// @import "./base/typography";
+
+//layout foler
+
+@import "./App";
+
+// @import "./layout/header";
+// @import "./layout/hero";
+// @import "./layout/grids";
+// @import "./layout/footer";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// body {
+//   overflow-x: hidden;
+//   background-image: $bg-linear;
+// }
+
+// img {
+//   width: 100%;
+//   height: auto;
+//   display: block;
+// }

@@ -1,0 +1,11 @@
+.btn-getStarted {
+  border: none;
+  color: $text-light-clr;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 30px;
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,38 @@
+@import "../base/components";
+
+.header {
+  margin: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-started {
+  @extend .btn-getStarted;
+  background-color: $primary-dark;
+  padding: 9px 24px;
+  &:hover {
+    background-color: $button-clr--hover;
+  }
+}
+
+//tablet
+
+@media (min-width: 768px) {
+  .header {
+    margin: 24px 40px;
+  }
+}
+
+//Desktop
+
+@media (min-width: 1440px) {
+  .header {
+    margin: 24px 165px;
+  }
+
+  .btn-started {
+    font-size: 18px;
+    padding: 14px 31px;
+  }
+}
