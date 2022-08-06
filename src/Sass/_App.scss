@@ -92,9 +92,21 @@ div.square {
       opacity: 1;
     }
   }
+
   img {
     width: 40px;
     height: 40px;
+    position: relative;
+  }
+}
+
+.square-active {
+  &:active {
+    box-shadow: none;
+    top: 4px;
+    .outline {
+      top: 28px;
+    }
   }
 }
 

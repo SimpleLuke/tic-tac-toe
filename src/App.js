@@ -157,6 +157,7 @@ function App() {
               o={square === "o" ? 1 : 0}
               placed={square !== null ? 1 : 0}
               turn={turn}
+              winner={winner}
               onClick={() => handleSquareClick(index)}
             />
           ))}

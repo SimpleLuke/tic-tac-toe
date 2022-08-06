@@ -93,6 +93,15 @@ div.square:hover .outline {
 div.square img {
   width: 40px;
   height: 40px;
+  position: relative;
+}
+
+.square-active:active {
+  box-shadow: none;
+  top: 4px;
+}
+.square-active:active .outline {
+  top: 28px;
 }
 
 .winningText {
