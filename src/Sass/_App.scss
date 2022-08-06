@@ -5,6 +5,8 @@
 body {
   background-color: $bg-clr;
   color: #fff;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 nav {
