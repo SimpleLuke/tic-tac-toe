@@ -19,6 +19,7 @@ const lines = [
 
 function App() {
   const [squares, setSquares] = useState(defaultSquares());
+  const [turn, setTurn] = useState("x");
   const [winner, setWinner] = useState(null);
 
   //computer move
@@ -67,6 +68,7 @@ function App() {
 
     //If computer turn
     if (isComputerTurn && !winner) {
+      setTurn("o");
       const winningLines = linesThatAre("o", "o", null);
 
       if (winningLines.length > 0) {
@@ -76,6 +78,7 @@ function App() {
         setTimeout(() => {
           putComputerAt(winPosition);
         }, "700");
+
         return;
       }
 
@@ -88,6 +91,7 @@ function App() {
         setTimeout(() => {
           putComputerAt(blockPosition);
         }, "700");
+
         return;
       }
 
@@ -100,6 +104,7 @@ function App() {
         setTimeout(() => {
           putComputerAt(continuePosition);
         }, "700");
+
         return;
       }
 
@@ -111,6 +116,15 @@ function App() {
       }, "700");
     }
   }, [squares, winner]);
+
+  //Change turn sign back to X
+  useEffect(() => {
+    if (turn === "o") {
+      setTimeout(() => {
+        setTurn("x");
+      }, "700");
+    }
+  }, [turn]);
 
   //player clicking
   const handleSquareClick = (index) => {
@@ -135,7 +149,7 @@ function App() {
   return (
     <Fragment>
       <main>
-        <Navbar reset={handleReset} />
+        <Navbar turn={turn} reset={handleReset} />
         <Board>
           {squares.map((square, index) => (
             <Square

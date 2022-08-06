@@ -6,7 +6,7 @@ const Navbar = (props) => {
     <nav>
       <img src={logo} alt="logo" />
       <div>
-        <p>X Turn</p>
+        <p>{props.turn} Turn</p>
       </div>
       <button onClick={props.reset}>
         <img src={resetIcon} alt="reset" />
