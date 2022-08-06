@@ -110,7 +110,7 @@ function App() {
         putComputerAt(randomIndex);
       }, "700");
     }
-  }, [squares]);
+  }, [squares, winner]);
 
   //player clicking
   const handleSquareClick = (index) => {
@@ -119,6 +119,9 @@ function App() {
 
     if (isPlayerTurn && !winner) {
       let newSquares = squares;
+      if (newSquares[index] === "o") {
+        return;
+      }
       newSquares[index] = "x";
       setSquares([...newSquares]);
     }
