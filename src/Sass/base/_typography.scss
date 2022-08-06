@@ -1,40 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 
-.heading-XL {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 70px;
-}
-.heading-L {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 51px;
-}
-.heading-M {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 40px;
-}
-.heading-S {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 28px;
-}
-
-.body-M {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 28px;
-}
-
-.body-S {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 28px;
+@mixin font($val) {
+  @if $val == HeadingL {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50.4px;
+    letter-spacing: 2.5px;
+  } @else if $val == HeadingM {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30.24px;
+    letter-spacing: 1.5px;
+  } @else if $val == HeadingS {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25.2px;
+    letter-spacing: 1.25px;
+  } @else if $val == HeadingXS {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20.16px;
+    letter-spacing: 1px;
+  } @else if $val == Body {
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17.64px;
+    letter-spacing: 0.88px;
+  }
 }
