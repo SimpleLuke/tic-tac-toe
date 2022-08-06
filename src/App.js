@@ -146,9 +146,11 @@ function App() {
             />
           ))}
         </Board>
-        {winner === "x" && <div>You Won!</div>}
-        {winner === "o" && <div>Computer Won!</div>}
-        {winner === "draw" && <div>Draw!</div>}
+        <div className="winningText">
+          {winner === "x" && <div>You Won!</div>}
+          {winner === "o" && <div>Computer Won!</div>}
+          {winner === "draw" && <div>Draw!</div>}
+        </div>
       </main>
     </Fragment>
   );
