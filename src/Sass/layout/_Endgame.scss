@@ -1,10 +1,13 @@
 @import "../base/typography";
 
 .content {
-  margin: 40px auto 48px auto;
+  margin: 40px auto 0px auto;
   width: 280px;
   height: 140px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   .win-lose-text {
     @include font(Body);
     color: $light-pri-clr;
@@ -13,6 +16,7 @@
   div {
     display: flex;
     margin-bottom: 24px;
+    justify-content: center;
     img {
       width: 30px;
       height: 30px;
@@ -20,7 +24,15 @@
     }
     .who-win-text {
       @include font(HeadingM);
+    }
+    .circle-win {
       color: $circle-shadow-clr;
+    }
+    .cross-win {
+      color: $cross-shadow-clr;
+    }
+    .draw-win {
+      color: $light-pri-clr;
     }
   }
   .next-btn {

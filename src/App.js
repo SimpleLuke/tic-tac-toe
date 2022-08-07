@@ -160,8 +160,9 @@ function App() {
   //   setModalIsShown(true);
   // };
 
-  const hideModalHandler = () => {
+  const restartModalHandler = () => {
     setModalIsShown(false);
+    handleReset();
   };
 
   return (
@@ -180,13 +181,10 @@ function App() {
             />
           ))}
         </Board>
-        <div className="winningText">
-          {winner === "x" && <div>You Won!</div>}
-          {winner === "o" && <div>Computer Won!</div>}
-          {winner === "draw" && <div>Draw!</div>}
-        </div>
       </main>
-      {modalIsShown && <Endgame onClose={hideModalHandler} />}
+      {modalIsShown && (
+        <Endgame winner={winner} onRestart={restartModalHandler} />
+      )}
       <footer>
         <a href="lukelai.tech">
           <p>&copy; 2022 Luke Lai</p>
