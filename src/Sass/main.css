@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 html,
 body {
   overflow-y: hidden;
@@ -246,6 +247,44 @@ footer a p {
 .content div .btn-restart:active {
   box-shadow: none;
   top: 10px;
+}
+
+.records-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.records-container div {
+  width: 96px;
+  height: 64px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px 19px;
+  color: #1a2a33;
+}
+.records-container div .records-role {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17.64px;
+  letter-spacing: 0.88px;
+}
+.records-container div .records-score {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25.2px;
+  letter-spacing: 1.25px;
+}
+.records-container .records-you {
+  background-color: #31c3bd;
+}
+.records-container .records-tie {
+  background-color: #a8bfc9;
+}
+.records-container .records-cpu {
+  background-color: #f2b137;
 }
 
 .backdrop {

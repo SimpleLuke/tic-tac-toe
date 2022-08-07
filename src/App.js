@@ -3,6 +3,7 @@ import Square from "./components/Square";
 import Navbar from "./components/Navbar";
 import Endgame from "./components/Endgame";
 import Restart from "./components/Restart";
+import Records from "./components/Records";
 
 import { useState, useEffect, Fragment } from "react";
 
@@ -198,6 +199,7 @@ function App() {
             />
           ))}
         </Board>
+        <Records />
       </main>
 
       <footer>

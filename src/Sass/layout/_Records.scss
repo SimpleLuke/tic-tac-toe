@@ -1,0 +1,32 @@
+@import "../base/typography";
+
+.records-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  div {
+    width: 96px;
+    height: 64px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 12px 19px;
+    color: $bg-clr;
+    .records-role {
+      @include font(Body);
+    }
+    .records-score {
+      @include font(HeadingS);
+    }
+  }
+  .records-you {
+    background-color: $cross-shadow-clr;
+  }
+  .records-tie {
+    background-color: $light-pri-clr;
+  }
+  .records-cpu {
+    background-color: $circle-shadow-clr;
+  }
+}
