@@ -4,7 +4,7 @@ const Restart = (props) => {
   return (
     <Modal>
       <p className="restart-text">RESTART GAME?</p>
-      <div>
+      <div className="restart-btn">
         <button onClick={props.cancel} className="btn-cancel-restart">
           No, Cancel
         </button>

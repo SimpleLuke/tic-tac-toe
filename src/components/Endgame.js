@@ -33,9 +33,14 @@ const Endgame = (props) => {
           <p className="who-win-text draw-win">ROUND TIED</p>
         )}
       </div>
-      <button className="next-btn" onClick={props.onRestart}>
-        NEXT ROUND
-      </button>
+      <div className="endgame-btn-container">
+        <button className="reset-btn" onClick={props.onReset}>
+          QUIT
+        </button>
+        <button className="next-btn" onClick={props.onRestart}>
+          NEXT ROUND
+        </button>
+      </div>
     </Modal>
   );
 };

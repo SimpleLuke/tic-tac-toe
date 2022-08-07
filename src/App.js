@@ -27,6 +27,21 @@ function App() {
   const [modalIsShown, setModalIsShown] = useState(false);
   const [restartIsShown, setRestartIsShown] = useState(false);
 
+  const [playerScores, setPlayerScores] = useState(
+    localStorage.getItem("playerWon") || 0
+  );
+  const [tieScores, setTieScores] = useState(
+    localStorage.getItem("tieWon") || 0
+  );
+  const [cpuScores, setCpuScores] = useState(
+    localStorage.getItem("cpuWon") || 0
+  );
+
+  //set up game records
+  localStorage.setItem("playerWon", playerScores);
+  localStorage.setItem("tieWon", tieScores);
+  localStorage.setItem("cpuWon", cpuScores);
+
   //computer move
   useEffect(() => {
     const isComputerTurn =
@@ -55,17 +70,25 @@ function App() {
     //Set winner
     if (playerWon) {
       setWinner("x");
+      setPlayerScores((prev) => Number(prev) + 1);
+
+      localStorage.setItem("playerWon", playerScores);
       setModalIsShown(true);
       return;
     }
     if (computerWon) {
       setWinner("o");
+      setCpuScores((prev) => Number(prev) + 1);
+      localStorage.setItem("cpuWon", cpuScores);
       setModalIsShown(true);
       return;
     }
 
     if (drawGame) {
       setWinner("draw");
+      setTieScores((prev) => Number(prev) + 1);
+      // console.log(tieScores);
+      localStorage.setItem("tieWon", tieScores);
       setModalIsShown(true);
       return;
     }
@@ -126,7 +149,7 @@ function App() {
         putComputerAt(randomIndex);
       }, "700");
     }
-  }, [squares, winner]);
+  }, [squares]);
 
   //Change turn sign back to X
   useEffect(() => {
@@ -177,13 +200,31 @@ function App() {
     handleReset();
   };
 
+  //Remove Game records
+  const resetRecordsHandler = () => {
+    setPlayerScores(0);
+
+    localStorage.setItem("playerWon", playerScores);
+    setTieScores(0);
+
+    localStorage.setItem("tieWon", tieScores);
+    setCpuScores(0);
+    localStorage.setItem("cpuWon", cpuScores);
+    setModalIsShown(false);
+    handleReset();
+  };
+
   return (
     <Fragment>
       {restartIsShown && (
         <Restart cancel={hideRestartHandler} restart={restartHandler} />
       )}
       {modalIsShown && (
-        <Endgame winner={winner} onRestart={restartModalHandler} />
+        <Endgame
+          onReset={resetRecordsHandler}
+          winner={winner}
+          onRestart={restartModalHandler}
+        />
       )}
       <main>
         <Navbar turn={turn} showRestart={showRestartHandler} />
@@ -199,7 +240,7 @@ function App() {
             />
           ))}
         </Board>
-        <Records />
+        <Records player={playerScores} tie={tieScores} cpu={cpuScores} />
       </main>
 
       <footer>

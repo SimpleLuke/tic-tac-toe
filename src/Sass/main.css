@@ -174,7 +174,11 @@ footer a p {
 .content div .draw-win {
   color: #a8bfc9;
 }
-.content .next-btn {
+.content .endgame-btn-container {
+  display: flex;
+  gap: 16px;
+}
+.content .endgame-btn-container .next-btn, .content .endgame-btn-container .reset-btn {
   background-color: #f2b137;
   box-shadow: inset 0px -4px #cc8b13;
   width: 146px;
@@ -191,9 +195,15 @@ footer a p {
   border-radius: 10px;
   position: relative;
 }
-.content .next-btn:active {
+.content .endgame-btn-container .next-btn:active, .content .endgame-btn-container .reset-btn:active {
   box-shadow: none;
   top: 10px;
+}
+.content .endgame-btn-container .reset-btn {
+  width: 76px;
+  height: 52px;
+  background-color: #a8bfc9;
+  box-shadow: inset 0px -4px #6b8997;
 }
 
 .content .restart-text {
@@ -204,11 +214,11 @@ footer a p {
   letter-spacing: 1.5px;
   color: #a8bfc9;
 }
-.content div {
+.content .restart-btn {
   display: flex;
   gap: 16px;
 }
-.content div .btn-cancel-restart {
+.content .restart-btn .btn-cancel-restart {
   width: 139px;
   height: 52px;
   background-color: #a8bfc9;
@@ -224,11 +234,11 @@ footer a p {
   line-height: 20.16px;
   letter-spacing: 1px;
 }
-.content div .btn-cancel-restart:active {
+.content .restart-btn .btn-cancel-restart:active {
   box-shadow: none;
   top: 10px;
 }
-.content div .btn-restart {
+.content .restart-btn .btn-restart {
   width: 151px;
   height: 52px;
   background-color: #f2b137;
@@ -244,7 +254,7 @@ footer a p {
   line-height: 20.16px;
   letter-spacing: 1px;
 }
-.content div .btn-restart:active {
+.content .restart-btn .btn-restart:active {
   box-shadow: none;
   top: 10px;
 }

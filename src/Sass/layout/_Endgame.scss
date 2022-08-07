@@ -35,21 +35,33 @@
       color: $light-pri-clr;
     }
   }
-  .next-btn {
-    background-color: $circle-shadow-clr;
-    box-shadow: inset 0px -4px $circle-hover-shadow-clr;
-    width: 146px;
-    height: 52px;
-    color: $bg-clr;
-    @include font(HeadingXS);
-    padding: 15px 16px 16px 16px;
-    text-align: center;
-    border: none;
-    border-radius: 10px;
-    position: relative;
-    &:active {
-      box-shadow: none;
-      top: 10px;
+  .endgame-btn-container {
+    display: flex;
+    gap: 16px;
+
+    .next-btn {
+      background-color: $circle-shadow-clr;
+      box-shadow: inset 0px -4px $circle-hover-shadow-clr;
+      width: 146px;
+      height: 52px;
+      color: $bg-clr;
+      @include font(HeadingXS);
+      padding: 15px 16px 16px 16px;
+      text-align: center;
+      border: none;
+      border-radius: 10px;
+      position: relative;
+      &:active {
+        box-shadow: none;
+        top: 10px;
+      }
+    }
+    .reset-btn {
+      @extend .next-btn;
+      width: 76px;
+      height: 52px;
+      background-color: $light-pri-clr;
+      box-shadow: inset 0px -4px $light-shadow-clr;
     }
   }
 }
