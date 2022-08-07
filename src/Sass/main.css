@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 html,
 body {
   overflow-y: hidden;
@@ -127,6 +128,102 @@ footer a p {
   margin-top: 10px;
 }
 
+.content {
+  margin: 40px auto 48px auto;
+  width: 280px;
+  height: 140px;
+  text-align: center;
+}
+.content .win-lose-text {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17.64px;
+  letter-spacing: 0.88px;
+  color: #a8bfc9;
+  margin-bottom: 16px;
+}
+.content div {
+  display: flex;
+  margin-bottom: 24px;
+}
+.content div img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+.content div .who-win-text {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30.24px;
+  letter-spacing: 1.5px;
+  color: #f2b137;
+}
+.content .next-btn {
+  background-color: #f2b137;
+  box-shadow: inset 0px -4px #cc8b13;
+  width: 146px;
+  height: 52px;
+  color: #1a2a33;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  padding: 15px 16px 16px 16px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+}
+.content .next-btn:active {
+  box-shadow: none;
+  top: 10px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  top: 200px;
+  width: 100%;
+  height: 228px;
+  background-color: #1f3641;
+  z-index: 30;
+  -webkit-animation: slide-down 300ms ease-out forwards;
+          animation: slide-down 300ms ease-out forwards;
+}
+
+@-webkit-keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 *,
 *::before,
 *::after {

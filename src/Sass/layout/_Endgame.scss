@@ -1,0 +1,43 @@
+@import "../base/typography";
+
+.content {
+  margin: 40px auto 48px auto;
+  width: 280px;
+  height: 140px;
+  text-align: center;
+  .win-lose-text {
+    @include font(Body);
+    color: $light-pri-clr;
+    margin-bottom: 16px;
+  }
+  div {
+    display: flex;
+    margin-bottom: 24px;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+    }
+    .who-win-text {
+      @include font(HeadingM);
+      color: $circle-shadow-clr;
+    }
+  }
+  .next-btn {
+    background-color: $circle-shadow-clr;
+    box-shadow: inset 0px -4px $circle-hover-shadow-clr;
+    width: 146px;
+    height: 52px;
+    color: $bg-clr;
+    @include font(HeadingXS);
+    padding: 15px 16px 16px 16px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    &:active {
+      box-shadow: none;
+      top: 10px;
+    }
+  }
+}

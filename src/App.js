@@ -1,6 +1,7 @@
 import Board from "./components/Board";
 import Square from "./components/Square";
 import Navbar from "./components/Navbar";
+import Endgame from "./components/Endgame";
 
 import { useState, useEffect, Fragment } from "react";
 
@@ -21,6 +22,7 @@ function App() {
   const [squares, setSquares] = useState(defaultSquares());
   const [turn, setTurn] = useState("x");
   const [winner, setWinner] = useState(null);
+  const [modalIsShown, setModalIsShown] = useState(false);
 
   //computer move
   useEffect(() => {
@@ -50,15 +52,18 @@ function App() {
     //Set winner
     if (playerWon) {
       setWinner("x");
+      setModalIsShown(true);
       return;
     }
     if (computerWon) {
       setWinner("o");
+      setModalIsShown(true);
       return;
     }
 
     if (drawGame) {
       setWinner("draw");
+      setModalIsShown(true);
       return;
     }
 
@@ -149,6 +154,16 @@ function App() {
     setSquares(defaultSquares());
     setWinner(null);
   };
+
+  //Modal
+  // const showModalHandler = () => {
+  //   setModalIsShown(true);
+  // };
+
+  const hideModalHandler = () => {
+    setModalIsShown(false);
+  };
+
   return (
     <Fragment>
       <main>
@@ -171,6 +186,7 @@ function App() {
           {winner === "draw" && <div>Draw!</div>}
         </div>
       </main>
+      {modalIsShown && <Endgame onClose={hideModalHandler} />}
       <footer>
         <a href="lukelai.tech">
           <p>&copy; 2022 Luke Lai</p>
