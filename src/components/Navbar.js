@@ -9,8 +9,8 @@ const Navbar = (props) => {
         <p className="sign">{props.turn}</p>
         <p>Turn</p>
       </div>
-      <button onClick={props.reset}>
-        <img src={resetIcon} alt="reset" />
+      <button onClick={props.showRestart}>
+        <img src={resetIcon} alt="restart" />
       </button>
     </nav>
   );

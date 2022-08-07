@@ -1,0 +1,45 @@
+@import "../base/typography";
+
+.content {
+  .restart-text {
+    @include font(HeadingM);
+    color: $light-pri-clr;
+  }
+
+  div {
+    display: flex;
+    gap: 16px;
+    .btn-cancel-restart {
+      width: 139px;
+      height: 52px;
+      background-color: $light-pri-clr;
+      box-shadow: inset 0px -4px $light-shadow-clr;
+      border: none;
+      border-radius: 10px;
+      color: $bg-clr;
+      position: relative;
+      text-transform: uppercase;
+      @include font(HeadingXS);
+      &:active {
+        box-shadow: none;
+        top: 10px;
+      }
+    }
+    .btn-restart {
+      width: 151px;
+      height: 52px;
+      background-color: $circle-shadow-clr;
+      box-shadow: inset 0px -4px $circle-hover-shadow-clr;
+      border: none;
+      border-radius: 10px;
+      color: $bg-clr;
+      position: relative;
+      text-transform: uppercase;
+      @include font(HeadingXS);
+      &:active {
+        box-shadow: none;
+        top: 10px;
+      }
+    }
+  }
+}

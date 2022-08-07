@@ -2,6 +2,7 @@ import Board from "./components/Board";
 import Square from "./components/Square";
 import Navbar from "./components/Navbar";
 import Endgame from "./components/Endgame";
+import Restart from "./components/Restart";
 
 import { useState, useEffect, Fragment } from "react";
 
@@ -23,6 +24,7 @@ function App() {
   const [turn, setTurn] = useState("x");
   const [winner, setWinner] = useState(null);
   const [modalIsShown, setModalIsShown] = useState(false);
+  const [restartIsShown, setRestartIsShown] = useState(false);
 
   //computer move
   useEffect(() => {
@@ -156,9 +158,9 @@ function App() {
   };
 
   //Modal
-  // const showModalHandler = () => {
-  //   setModalIsShown(true);
-  // };
+  const showRestartHandler = () => {
+    setRestartIsShown(true);
+  };
 
   const restartModalHandler = () => {
     setModalIsShown(false);
@@ -167,8 +169,12 @@ function App() {
 
   return (
     <Fragment>
+      {restartIsShown && <Restart />}
+      {modalIsShown && (
+        <Endgame winner={winner} onRestart={restartModalHandler} />
+      )}
       <main>
-        <Navbar turn={turn} reset={handleReset} />
+        <Navbar turn={turn} showRestart={showRestartHandler} />
         <Board>
           {squares.map((square, index) => (
             <Square
@@ -182,9 +188,7 @@ function App() {
           ))}
         </Board>
       </main>
-      {modalIsShown && (
-        <Endgame winner={winner} onRestart={restartModalHandler} />
-      )}
+
       <footer>
         <a href="lukelai.tech">
           <p>&copy; 2022 Luke Lai</p>
