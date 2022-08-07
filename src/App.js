@@ -162,6 +162,15 @@ function App() {
     setRestartIsShown(true);
   };
 
+  const hideRestartHandler = () => {
+    setRestartIsShown(false);
+  };
+
+  const restartHandler = () => {
+    setRestartIsShown(false);
+    handleReset();
+  };
+
   const restartModalHandler = () => {
     setModalIsShown(false);
     handleReset();
@@ -169,7 +178,9 @@ function App() {
 
   return (
     <Fragment>
-      {restartIsShown && <Restart />}
+      {restartIsShown && (
+        <Restart cancel={hideRestartHandler} restart={restartHandler} />
+      )}
       {modalIsShown && (
         <Endgame winner={winner} onRestart={restartModalHandler} />
       )}
