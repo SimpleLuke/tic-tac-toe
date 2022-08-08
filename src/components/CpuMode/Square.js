@@ -1,6 +1,6 @@
-import crossIcon from "../assets/icon-x.svg";
-import circleIcon from "../assets/icon-o.svg";
-import xOutline from "../assets/icon-x-outline.svg";
+import crossIcon from "../../assets/icon-x.svg";
+import circleIcon from "../../assets/icon-o.svg";
+import xOutline from "../../assets/icon-x-outline.svg";
 // import oOutline from "../assets/icon-o-outline.svg";
 
 const Square = (props) => {

@@ -1,6 +1,6 @@
-import Modal from "../UI/Modal";
-import oIcon from "../assets/icon-o.svg";
-import xIcon from "../assets/icon-x.svg";
+import Modal from "../../UI/Modal";
+import oIcon from "../../assets/icon-o.svg";
+import xIcon from "../../assets/icon-x.svg";
 
 const Endgame = (props) => {
   return (

@@ -1,5 +1,5 @@
-import resetIcon from "../assets/icon-restart.svg";
-import logo from "../assets/logo.svg";
+import resetIcon from "../../assets/icon-restart.svg";
+import logo from "../../assets/logo.svg";
 
 const Navbar = (props) => {
   return (

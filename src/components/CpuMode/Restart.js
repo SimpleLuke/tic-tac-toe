@@ -1,4 +1,4 @@
-import Modal from "../UI/Modal";
+import Modal from "../../UI/Modal";
 
 const Restart = (props) => {
   return (
