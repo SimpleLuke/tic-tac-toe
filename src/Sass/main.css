@@ -80,9 +80,7 @@ div.board {
 div.square {
   width: 96px;
   height: 96px;
-  background-color: #1f3641;
   border-radius: 10px;
-  box-shadow: inset 0px -10px #10212a;
   padding: 24px 28px 32px 28px;
   position: relative;
 }
@@ -102,6 +100,25 @@ div.square img {
   width: 40px;
   height: 40px;
   position: relative;
+}
+
+.square-normal {
+  background-color: #1f3641;
+  box-shadow: inset 0px -10px #10212a;
+}
+
+.winSquare-x {
+  background-color: #31c3bd;
+  box-shadow: inset 0px -10px #118c87;
+}
+
+.winSquare-o {
+  background-color: #f2b137;
+  box-shadow: inset 0px -10px #cc8b13;
+}
+
+.win-icon-transparent {
+  filter: invert(11%) sepia(10%) saturate(2532%) hue-rotate(160deg) brightness(15%) contrast(87%);
 }
 
 .square-active:active {

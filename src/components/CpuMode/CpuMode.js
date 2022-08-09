@@ -26,6 +26,7 @@ const CpuMode = () => {
   const [winner, setWinner] = useState(null);
   const [modalIsShown, setModalIsShown] = useState(false);
   const [restartIsShown, setRestartIsShown] = useState(false);
+  const [winningCombination, setWinningCombination] = useState([]);
 
   const [playerScores, setPlayerScores] = useState(
     localStorage.getItem("playerWon") || 0
@@ -67,11 +68,18 @@ const CpuMode = () => {
     const computerWon = linesThatAre("o", "o", "o").length > 0;
     const drawGame = squares.filter((index) => index !== null).length === 9;
 
+    //check winning line
+
+    if (playerWon) {
+      setWinningCombination(linesThatAre("x", "x", "x"));
+    } else if (computerWon) {
+      setWinningCombination(linesThatAre("o", "o", "o"));
+    }
+
     //Set winner
     if (playerWon) {
       setWinner("x");
       setPlayerScores((prev) => Number(prev) + 1);
-
       localStorage.setItem("playerWon", playerScores);
       setModalIsShown(true);
       return;
@@ -81,6 +89,7 @@ const CpuMode = () => {
       setCpuScores((prev) => Number(prev) + 1);
       localStorage.setItem("cpuWon", cpuScores);
       setModalIsShown(true);
+      console.log(linesThatAre("o", "o", "o"));
       return;
     }
 
@@ -178,6 +187,7 @@ const CpuMode = () => {
   //reset the game
   const handleReset = () => {
     setSquares(defaultSquares());
+    setWinningCombination([]);
     setWinner(null);
   };
 
@@ -230,11 +240,13 @@ const CpuMode = () => {
         <Board>
           {squares.map((square, index) => (
             <Square
+              index={index}
               x={square === "x" ? 1 : 0}
               o={square === "o" ? 1 : 0}
               placed={square !== null ? 1 : 0}
               turn={turn}
               winner={winner}
+              winningcombo={winningCombination}
               onClick={() => handleSquareClick(index)}
             />
           ))}
