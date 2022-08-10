@@ -8,7 +8,7 @@ const Endgame = (props) => {
       <p className="win-lose-text">
         {props.winner === (props.playerMark === "x" ? "x" : "o")
           ? "YOU WON!"
-          : props.winner === (props.playerMark === "o" ? "o" : "x")
+          : props.winner === (props.playerMark === "x" ? "o" : "x")
           ? "OH NO, YOU LOST..."
           : ""}
       </p>
