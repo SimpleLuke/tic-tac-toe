@@ -83,5 +83,10 @@
     color: $bg-clr;
     @include font(HeadingXS);
     padding: 14px 76px 22px 76px;
+    position: relative;
+    &:active {
+      box-shadow: none;
+      top: 8px;
+    }
   }
 }

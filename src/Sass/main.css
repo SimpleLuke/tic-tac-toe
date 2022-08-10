@@ -115,6 +115,11 @@ body {
   line-height: 20.16px;
   letter-spacing: 1px;
   padding: 14px 76px 22px 76px;
+  position: relative;
+}
+.home-container .btn-newgame-cpu:active {
+  box-shadow: none;
+  top: 8px;
 }
 
 nav {

@@ -2,7 +2,7 @@ import logo from "../../assets/logo.svg";
 import xIcon from "../../assets/icon-x.svg";
 import oIcon from "../../assets/icon-o.svg";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div className="home-container">
       <img className="logo-home" src={logo} alt="Logo" />
@@ -26,7 +26,9 @@ const Home = () => {
         </div>
         <p className="pick-box-text--bottom">REMEMBER : X GOES FIRST</p>
       </div>
-      <button className="btn-newgame-cpu">NEW GAME (VS CPU)</button>
+      <button onClick={props.cpuMode} className="btn-newgame-cpu">
+        NEW GAME (VS CPU)
+      </button>
     </div>
   );
 };

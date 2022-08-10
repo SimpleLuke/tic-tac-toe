@@ -20,7 +20,7 @@ const lines = [
   [2, 4, 6],
 ];
 
-const CpuMode = () => {
+const CpuMode = (props) => {
   const [squares, setSquares] = useState(defaultSquares());
   const [turn, setTurn] = useState("x");
   const [winner, setWinner] = useState(null);
@@ -212,6 +212,7 @@ const CpuMode = () => {
 
   //Remove Game records
   const resetRecordsHandler = () => {
+    props.home();
     setPlayerScores(0);
 
     localStorage.setItem("playerWon", playerScores);
