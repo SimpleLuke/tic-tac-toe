@@ -42,19 +42,70 @@
       text-align: center;
       margin-bottom: 17px;
       position: relative;
-      .pick-box-selected {
+      .pick-box-selected-left {
+        width: 132px;
+        height: 54px;
+        position: absolute;
+        top: 5px;
+        left: 8px;
+      }
+      .pick-box-selected-right {
+        width: 132px;
+        height: 54px;
+        position: absolute;
+        top: 5px;
+        right: 8px;
+      }
+      .pick-box-selected-x {
         width: 132px;
         height: 54px;
         background-color: $light-pri-clr;
         border-radius: 10px;
-        transform: translate(8px, 5px);
+        // transform: translate(8px, 5px);
+        position: absolute;
+        top: 5px;
+        left: 8px;
+        animation: slideToLeft 0.5s ease-in;
+        z-index: 3;
+      }
+
+      @keyframes slideToLeft {
+        0% {
+          transform: translateX(132px);
+        }
+
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      .pick-box-selected-o {
+        width: 132px;
+        height: 54px;
+        background-color: $light-pri-clr;
+        border-radius: 10px;
+        // transform: translate(139px, 5px);
+        position: absolute;
+        top: 5px;
+        right: 8px;
+        animation: slideToRight 0.5s ease-in;
+        z-index: 3;
+      }
+      @keyframes slideToRight {
+        0% {
+          transform: translateX(-132px);
+        }
+
+        100% {
+          transform: translate(0);
+        }
       }
       .pick-box-xo--x {
         width: 32px;
         margin: auto;
         position: absolute;
-        top: 18px;
-        left: 58px;
+        top: 11px;
+        left: 50px;
       }
       .pick-box-xo--Selected {
         filter: brightness(0) saturate(100%) invert(13%) sepia(5%)
@@ -64,12 +115,28 @@
         width: 32px;
         margin: auto;
         position: absolute;
-        top: 18px;
-        right: 58.26px;
+        top: 11px;
+        left: 50px;
       }
       .pick-box-xo--notSelected {
         filter: brightness(0) saturate(100%) invert(92%) sepia(6%)
           saturate(992%) hue-rotate(166deg) brightness(83%) contrast(88%);
+      }
+      .under-marks--x {
+        z-index: 2;
+        position: absolute;
+        top: 16px;
+        left: 58px;
+        width: 32px;
+        @extend .pick-box-xo--notSelected;
+      }
+      .under-marks--o {
+        z-index: 2;
+        position: absolute;
+        top: 16px;
+        left: 189px;
+        width: 32px;
+        @extend .pick-box-xo--notSelected;
       }
     }
   }

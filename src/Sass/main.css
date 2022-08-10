@@ -74,19 +74,82 @@ body {
   margin-bottom: 17px;
   position: relative;
 }
-.home-container .pick-box .pick-box-xo .pick-box-selected {
+.home-container .pick-box .pick-box-xo .pick-box-selected-left {
+  width: 132px;
+  height: 54px;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+.home-container .pick-box .pick-box-xo .pick-box-selected-right {
+  width: 132px;
+  height: 54px;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+.home-container .pick-box .pick-box-xo .pick-box-selected-x {
   width: 132px;
   height: 54px;
   background-color: #a8bfc9;
   border-radius: 10px;
-  transform: translate(8px, 5px);
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  -webkit-animation: slideToLeft 0.5s ease-in;
+          animation: slideToLeft 0.5s ease-in;
+  z-index: 3;
+}
+@-webkit-keyframes slideToLeft {
+  0% {
+    transform: translateX(132px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes slideToLeft {
+  0% {
+    transform: translateX(132px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.home-container .pick-box .pick-box-xo .pick-box-selected-o {
+  width: 132px;
+  height: 54px;
+  background-color: #a8bfc9;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  -webkit-animation: slideToRight 0.5s ease-in;
+          animation: slideToRight 0.5s ease-in;
+  z-index: 3;
+}
+@-webkit-keyframes slideToRight {
+  0% {
+    transform: translateX(-132px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes slideToRight {
+  0% {
+    transform: translateX(-132px);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
 .home-container .pick-box .pick-box-xo .pick-box-xo--x {
   width: 32px;
   margin: auto;
   position: absolute;
-  top: 18px;
-  left: 58px;
+  top: 11px;
+  left: 50px;
 }
 .home-container .pick-box .pick-box-xo .pick-box-xo--Selected {
   filter: brightness(0) saturate(100%) invert(13%) sepia(5%) saturate(3586%) hue-rotate(157deg) brightness(97%) contrast(94%);
@@ -95,11 +158,25 @@ body {
   width: 32px;
   margin: auto;
   position: absolute;
-  top: 18px;
-  right: 58.26px;
+  top: 11px;
+  left: 50px;
 }
-.home-container .pick-box .pick-box-xo .pick-box-xo--notSelected {
+.home-container .pick-box .pick-box-xo .pick-box-xo--notSelected, .home-container .pick-box .pick-box-xo .under-marks--o, .home-container .pick-box .pick-box-xo .under-marks--x {
   filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(992%) hue-rotate(166deg) brightness(83%) contrast(88%);
+}
+.home-container .pick-box .pick-box-xo .under-marks--x {
+  z-index: 2;
+  position: absolute;
+  top: 16px;
+  left: 58px;
+  width: 32px;
+}
+.home-container .pick-box .pick-box-xo .under-marks--o {
+  z-index: 2;
+  position: absolute;
+  top: 16px;
+  left: 189px;
+  width: 32px;
 }
 .home-container .btn-newgame-cpu {
   width: 327px;
