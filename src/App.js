@@ -10,7 +10,7 @@ function App() {
   );
 
   useEffect(() => {
-    localStorage.setItem("stage", mode === null ? "home" : mode);
+    localStorage.setItem("stage", mode === "null" ? "home" : mode);
     setMode(localStorage.getItem("stage"));
     console.log(localStorage.getItem("stage"));
     localStorage.setItem("playerMark", playerMark);
