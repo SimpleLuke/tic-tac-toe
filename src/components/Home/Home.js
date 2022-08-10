@@ -21,7 +21,7 @@ const Home = (props) => {
     <div className="home-container">
       <img className="logo-home" src={logo} alt="Logo" />
       <div className="pick-box">
-        <p className="pick-box-text--top">PLAYER 1’S MARK</p>
+        <p className="pick-box-text--top">PICK PLAYER 1’S MARK</p>
         <div className="pick-box-xo">
           <img
             src={xIcon}
