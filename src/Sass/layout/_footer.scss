@@ -1,58 +1,11 @@
-@import "../base/components";
-
-.footer {
-  //   height: 120px;
-  //   width: 100%;
-  margin-top: 80px;
-
-  background-color: $primary-dark;
-
-  .footer-container {
-    padding: 36px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .btn-started--footer {
-      @extend .btn-getStarted;
-      background-image: $cool-linear;
-      padding: 9px 24px 11px 24px;
-      &:hover {
-        opacity: 0.5;
-      }
-    }
-  }
+footer {
   a {
     text-decoration: none;
-    color: $text-light-clr;
+    color: #dbe8ed;
     text-align: center;
     p {
-      padding-bottom: 10px;
-    }
-  }
-}
-
-//tablet
-
-@media (min-width: 768px) {
-  .footer {
-    margin-top: 86px;
-    .footer-container {
-      padding: 36px 40px;
-    }
-  }
-}
-
-//desktop
-
-@media (min-width: 1440px) {
-  .footer {
-    margin-top: 140px;
-    .footer-container {
-      padding: 36px 165px;
-      .btn-started--footer {
-        font-size: 18px;
-        padding: 14px 32px;
-      }
+      margin-top: 10px;
+      //   padding-top: 10px;
     }
   }
 }

@@ -6,9 +6,11 @@
 //layout folder
 
 @import "./App";
+@import "./layout/Board";
 @import "./layout/Endgame";
 @import "./layout/Restart";
 @import "./layout/Records";
+@import "./layout/footer";
 
 //UI Folder
 @import "./UI/Modal";
