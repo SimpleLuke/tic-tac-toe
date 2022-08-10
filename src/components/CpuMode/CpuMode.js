@@ -257,6 +257,7 @@ const CpuMode = (props) => {
           onReset={resetRecordsHandler}
           winner={winner}
           onRestart={restartModalHandler}
+          playerMark={playerMark}
         />
       )}
       <main>

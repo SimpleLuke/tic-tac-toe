@@ -6,9 +6,9 @@ const Endgame = (props) => {
   return (
     <Modal>
       <p className="win-lose-text">
-        {props.winner === "x"
+        {props.winner === props.playerMark
           ? "YOU WON!"
-          : props.winner === "o"
+          : props.winner !== props.playerMark
           ? "OH NO, YOU LOST..."
           : ""}
       </p>
