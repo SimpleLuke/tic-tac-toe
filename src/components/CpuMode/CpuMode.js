@@ -28,6 +28,10 @@ const CpuMode = (props) => {
   const [restartIsShown, setRestartIsShown] = useState(false);
   const [winningCombination, setWinningCombination] = useState([]);
 
+  const [playerMark, setPlayerMark] = useState(
+    localStorage.getItem("playerMark")
+  );
+
   const [playerScores, setPlayerScores] = useState(
     localStorage.getItem("playerWon") || 0
   );
@@ -46,7 +50,9 @@ const CpuMode = (props) => {
   //computer move
   useEffect(() => {
     const isComputerTurn =
-      squares.filter((square) => square !== null).length % 2 === 1;
+      playerMark === "x"
+        ? squares.filter((square) => square !== null).length % 2 === 1
+        : squares.filter((square) => square !== null).length % 2 === 0;
 
     //Checking if any line made from a, b, c combinations
     const linesThatAre = (a, b, c) => {
@@ -64,39 +70,43 @@ const CpuMode = (props) => {
       .map((square, index) => (square === null ? index : null))
       .filter((val) => val !== null);
 
-    const playerWon = linesThatAre("x", "x", "x").length > 0;
-    const computerWon = linesThatAre("o", "o", "o").length > 0;
+    const playerWonPattern =
+      playerMark === "x" ? ["x", "x", "x"] : ["o", "o", "o"];
+    const cpuWonPattern =
+      playerMark === "x" ? ["o", "o", "o"] : ["x", "x", "x"];
+
+    const playerWon = linesThatAre(...playerWonPattern).length > 0;
+    const computerWon = linesThatAre(...cpuWonPattern).length > 0;
     const drawGame = squares.filter((index) => index !== null).length === 9;
 
     //check winning line
 
     if (playerWon) {
-      setWinningCombination(linesThatAre("x", "x", "x"));
+      setWinningCombination(linesThatAre(...playerWonPattern));
     } else if (computerWon) {
-      setWinningCombination(linesThatAre("o", "o", "o"));
+      setWinningCombination(linesThatAre(...cpuWonPattern));
     }
 
     //Set winner
     if (playerWon) {
-      setWinner("x");
+      setWinner(playerMark);
       setPlayerScores((prev) => Number(prev) + 1);
       localStorage.setItem("playerWon", playerScores);
       setModalIsShown(true);
       return;
     }
     if (computerWon) {
-      setWinner("o");
+      setWinner(playerMark === "x" ? "o" : "x");
       setCpuScores((prev) => Number(prev) + 1);
       localStorage.setItem("cpuWon", cpuScores);
       setModalIsShown(true);
-      console.log(linesThatAre("o", "o", "o"));
+
       return;
     }
 
     if (drawGame) {
       setWinner("draw");
       setTieScores((prev) => Number(prev) + 1);
-      // console.log(tieScores);
       localStorage.setItem("tieWon", tieScores);
       setModalIsShown(true);
       return;
@@ -105,14 +115,18 @@ const CpuMode = (props) => {
     //Computer playing
     const putComputerAt = (index) => {
       let newSquares = squares;
-      newSquares[index] = "o";
+      newSquares[index] = playerMark === "x" ? "o" : "x";
       setSquares([...newSquares]);
     };
 
     //If computer turn
     if (isComputerTurn && !winner) {
-      setTurn("o");
-      const winningLines = linesThatAre("o", "o", null);
+      setTurn(playerMark === "x" ? "o" : "x");
+      const winningLines = linesThatAre(
+        playerMark === "x" ? "o" : "x",
+        playerMark === "x" ? "o" : "x",
+        null
+      );
 
       if (winningLines.length > 0) {
         const winPosition = winningLines[0].filter(
@@ -125,7 +139,7 @@ const CpuMode = (props) => {
         return;
       }
 
-      const linesToBlock = linesThatAre("x", "x", null);
+      const linesToBlock = linesThatAre(playerMark, playerMark, null);
 
       if (linesToBlock.length > 0) {
         const blockPosition = linesToBlock[0].filter(
@@ -138,7 +152,11 @@ const CpuMode = (props) => {
         return;
       }
 
-      const linesToContinue = linesThatAre("o", null, null);
+      const linesToContinue = linesThatAre(
+        playerMark === "x" ? "o" : "x",
+        null,
+        null
+      );
 
       if (linesToContinue.length > 0) {
         const continuePosition = linesToContinue[0].filter(
@@ -152,7 +170,9 @@ const CpuMode = (props) => {
       }
 
       const randomIndex =
-        emptyIndexes[Math.ceil(Math.random() * emptyIndexes.length)];
+        playerMark === "x"
+          ? emptyIndexes[Math.ceil(Math.random() * emptyIndexes.length)]
+          : emptyIndexes[Math.ceil(Math.random() * (emptyIndexes.length - 1))];
 
       setTimeout(() => {
         putComputerAt(randomIndex);
@@ -162,9 +182,9 @@ const CpuMode = (props) => {
 
   //Change turn sign back to X
   useEffect(() => {
-    if (turn === "o") {
+    if (turn === (playerMark === "x" ? "o" : "x")) {
       setTimeout(() => {
-        setTurn("x");
+        setTurn(playerMark);
       }, "700");
     }
   }, [turn]);
@@ -172,14 +192,17 @@ const CpuMode = (props) => {
   //player clicking
   const handleSquareClick = (index) => {
     const isPlayerTurn =
-      squares.filter((square) => square !== null).length % 2 === 0;
+      playerMark === "x"
+        ? squares.filter((square) => square !== null).length % 2 === 0
+        : squares.filter((square) => square !== null).length % 2 === 1;
 
     if (isPlayerTurn && !winner) {
       let newSquares = squares;
-      if (newSquares[index] === "o") {
+      if ((newSquares[index] === playerMark) === ("x" ? "o" : "x")) {
         return;
       }
-      newSquares[index] = "x";
+
+      newSquares[index] = playerMark;
       setSquares([...newSquares]);
     }
   };
@@ -214,13 +237,13 @@ const CpuMode = (props) => {
   const resetRecordsHandler = () => {
     props.home();
     setPlayerScores(0);
+    localStorage.removeItem("playerWon");
 
-    localStorage.setItem("playerWon", playerScores);
     setTieScores(0);
+    localStorage.removeItem("tieWon");
 
-    localStorage.setItem("tieWon", tieScores);
     setCpuScores(0);
-    localStorage.setItem("cpuWon", cpuScores);
+    localStorage.removeItem("cpuWon");
     setModalIsShown(false);
     handleReset();
   };
@@ -246,13 +269,19 @@ const CpuMode = (props) => {
               o={square === "o" ? 1 : 0}
               placed={square !== null ? 1 : 0}
               turn={turn}
+              playerMark={playerMark}
               winner={winner}
               winningcombo={winningCombination}
               onClick={() => handleSquareClick(index)}
             />
           ))}
         </Board>
-        <Records player={playerScores} tie={tieScores} cpu={cpuScores} />
+        <Records
+          player={playerScores}
+          tie={tieScores}
+          cpu={cpuScores}
+          playerMark={playerMark}
+        />
       </main>
     </Fragment>
   );
