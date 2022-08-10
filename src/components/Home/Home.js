@@ -2,27 +2,39 @@ import logo from "../../assets/logo.svg";
 import xIcon from "../../assets/icon-x.svg";
 import oIcon from "../../assets/icon-o.svg";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = (props) => {
   const [mark, setMark] = useState("x");
 
   const pickHandler = () => {
-    console.log(mark);
     if (mark === "x") {
       setMark("o");
     } else {
       setMark("x");
     }
   };
+  useEffect(() => {
+    props.playerMark(mark);
+  }, [mark]);
   return (
     <div className="home-container">
       <img className="logo-home" src={logo} alt="Logo" />
       <div className="pick-box">
         <p className="pick-box-text--top">PLAYER 1’S MARK</p>
         <div className="pick-box-xo">
-          <img src={xIcon} className="under-marks--x" alt="under x" />
-          <img src={oIcon} className="under-marks--o" alt="under o" />
+          <img
+            src={xIcon}
+            className="under-marks--x"
+            alt="under x"
+            onClick={pickHandler}
+          />
+          <img
+            src={oIcon}
+            className="under-marks--o"
+            alt="under o"
+            onClick={pickHandler}
+          />
           <div
             className={`pick-box-selected-left ${
               mark === "x" ? "pick-box-selected-x" : ""

@@ -5,6 +5,7 @@ import { Fragment, useState, useEffect } from "react";
 
 function App() {
   const [mode, setMode] = useState(localStorage.getItem("stage"));
+  const [playerMark, setPlayerMark] = useState("x");
 
   useEffect(() => {
     localStorage.setItem("stage", mode === "" ? "home" : mode);
@@ -19,10 +20,18 @@ function App() {
   const enterHomeHandler = () => {
     setMode("home");
   };
+
+  const playerMarkHandler = (mark = "x") => {
+    setPlayerMark(mark);
+  };
   return (
     <Fragment>
-      {mode === "home" && <Home cpuMode={enterCpuHandler} />}
-      {mode === "cpu" && <CpuMode home={enterHomeHandler} />}
+      {mode === "home" && (
+        <Home cpuMode={enterCpuHandler} playerMark={playerMarkHandler} />
+      )}
+      {mode === "cpu" && (
+        <CpuMode home={enterHomeHandler} playerMark={playerMark} />
+      )}
 
       <footer>
         <a href="lukelai.tech">
