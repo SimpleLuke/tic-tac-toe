@@ -23,7 +23,7 @@ const Square = (props) => {
   return (
     <div
       className={
-        winSquare && (props.winner === "x" ? "win-mask-x" : "win-mask-o")
+        winSquare ? (props.winner === "x" ? "win-mask-x" : "win-mask-o") : ""
       }
     >
       <div

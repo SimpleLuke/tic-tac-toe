@@ -1,11 +1,14 @@
 import CpuMode from "./components/CpuMode/CpuMode";
+import Home from "./components/Home/Home";
 
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 function App() {
+  const [mode, setMode] = useState("home");
   return (
     <Fragment>
-      <CpuMode />
+      {mode === "home" && <Home />}
+      {mode === "cpu" && <CpuMode />}
 
       <footer>
         <a href="lukelai.tech">

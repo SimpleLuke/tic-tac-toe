@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +20,101 @@ body {
   color: #fff;
   height: 100%;
   position: relative;
+}
+
+.home-container {
+  width: 327px;
+  height: 429px;
+  display: flex;
+  flex-direction: column;
+  margin: 120px auto 10px auto;
+}
+.home-container .logo-home {
+  display: inline-block;
+  width: 72px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+.home-container .pick-box {
+  width: 327px;
+  height: 205px;
+  margin-bottom: 32px;
+  padding: 24px 32px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f3641;
+  box-shadow: inset 0px -8px #10212a;
+  border-radius: 15px;
+}
+.home-container .pick-box .pick-box-text--top {
+  color: #a8bfc9;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  margin-bottom: 33px;
+}
+.home-container .pick-box .pick-box-text--bottom {
+  color: #a8bfc9;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17.64px;
+  letter-spacing: 0.88px;
+  opacity: 0.5;
+}
+.home-container .pick-box .pick-box-xo {
+  width: 279px;
+  height: 72px;
+  background-color: #1a2a33;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 17px;
+  position: relative;
+}
+.home-container .pick-box .pick-box-xo .pick-box-selected {
+  width: 132px;
+  height: 54px;
+  background-color: #a8bfc9;
+  border-radius: 10px;
+  transform: translate(8px, 5px);
+}
+.home-container .pick-box .pick-box-xo .pick-box-xo--x {
+  width: 32px;
+  margin: auto;
+  position: absolute;
+  top: 18px;
+  left: 58px;
+}
+.home-container .pick-box .pick-box-xo .pick-box-xo--Selected {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(5%) saturate(3586%) hue-rotate(157deg) brightness(97%) contrast(94%);
+}
+.home-container .pick-box .pick-box-xo .pick-box-xo--o {
+  width: 32px;
+  margin: auto;
+  position: absolute;
+  top: 18px;
+  right: 58.26px;
+}
+.home-container .pick-box .pick-box-xo .pick-box-xo--notSelected {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(992%) hue-rotate(166deg) brightness(83%) contrast(88%);
+}
+.home-container .btn-newgame-cpu {
+  width: 327px;
+  height: 56px;
+  border: none;
+  border-radius: 15px;
+  background-color: #f2b137;
+  box-shadow: inset 0px -8px #cc8b13;
+  color: #1a2a33;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  padding: 14px 76px 22px 76px;
 }
 
 nav {

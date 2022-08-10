@@ -1,0 +1,87 @@
+@import "../base/colors";
+@import "../base/typography";
+
+.home-container {
+  width: 327px;
+  height: 429px;
+  display: flex;
+  flex-direction: column;
+  margin: 120px auto 10px auto;
+  .logo-home {
+    display: inline-block;
+    width: 72px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+  .pick-box {
+    width: 327px;
+    height: 205px;
+    margin-bottom: 32px;
+    padding: 24px 32px 30px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $dark-pri-clr;
+    box-shadow: inset 0px -8px $dark-shadow-clr;
+    border-radius: 15px;
+    .pick-box-text--top {
+      color: $light-pri-clr;
+      @include font(HeadingXS);
+      margin-bottom: 33px;
+    }
+    .pick-box-text--bottom {
+      color: $light-pri-clr;
+      @include font(Body);
+      opacity: 0.5;
+    }
+    .pick-box-xo {
+      width: 279px;
+      height: 72px;
+      background-color: $bg-clr;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 17px;
+      position: relative;
+      .pick-box-selected {
+        width: 132px;
+        height: 54px;
+        background-color: $light-pri-clr;
+        border-radius: 10px;
+        transform: translate(8px, 5px);
+      }
+      .pick-box-xo--x {
+        width: 32px;
+        margin: auto;
+        position: absolute;
+        top: 18px;
+        left: 58px;
+      }
+      .pick-box-xo--Selected {
+        filter: brightness(0) saturate(100%) invert(13%) sepia(5%)
+          saturate(3586%) hue-rotate(157deg) brightness(97%) contrast(94%);
+      }
+      .pick-box-xo--o {
+        width: 32px;
+        margin: auto;
+        position: absolute;
+        top: 18px;
+        right: 58.26px;
+      }
+      .pick-box-xo--notSelected {
+        filter: brightness(0) saturate(100%) invert(92%) sepia(6%)
+          saturate(992%) hue-rotate(166deg) brightness(83%) contrast(88%);
+      }
+    }
+  }
+  .btn-newgame-cpu {
+    width: 327px;
+    height: 56px;
+    border: none;
+    border-radius: 15px;
+    background-color: $circle-shadow-clr;
+    box-shadow: inset 0px -8px $circle-hover-shadow-clr;
+    color: $bg-clr;
+    @include font(HeadingXS);
+    padding: 14px 76px 22px 76px;
+  }
+}
