@@ -117,7 +117,7 @@ const CpuMode = (props) => {
     //player 1
     if (isPlayerTurn && !winner) {
       let newSquares = squares;
-      if ((newSquares[index] === playerMark) === ("x" ? "o" : "x")) {
+      if (newSquares[index] !== null) {
         return;
       }
 
@@ -128,7 +128,7 @@ const CpuMode = (props) => {
     //Player 2
     if (isComputerTurn && !winner) {
       let newSquares = squares;
-      if ((newSquares[index] === playerMark) === ("x" ? "x" : "o")) {
+      if (newSquares[index] !== null) {
         return;
       }
       newSquares[index] = playerMark === "x" ? "o" : "x";
