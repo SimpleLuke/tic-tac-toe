@@ -1,5 +1,6 @@
 import CpuMode from "./components/CpuMode/CpuMode";
 import Home from "./components/Home/Home";
+import MultiMode from "./components/MultiMode/MultiMode";
 
 import { Fragment, useState, useEffect } from "react";
 
@@ -19,6 +20,9 @@ function App() {
   const enterCpuHandler = () => {
     setMode("cpu");
   };
+  const enterMultiHandler = () => {
+    setMode("multi");
+  };
 
   const enterHomeHandler = () => {
     setMode("home");
@@ -30,9 +34,14 @@ function App() {
   return (
     <Fragment>
       {mode === "home" && (
-        <Home cpuMode={enterCpuHandler} playerMark={playerMarkHandler} />
+        <Home
+          cpuMode={enterCpuHandler}
+          multiMode={enterMultiHandler}
+          playerMark={playerMarkHandler}
+        />
       )}
-      {mode === "cpu" && <CpuMode home={enterHomeHandler} />}
+      {mode === "cpu" && <CpuMode mode={mode} home={enterHomeHandler} />}
+      {mode === "multi" && <MultiMode mode={mode} home={enterHomeHandler} />}
 
       <footer>
         <a href="lukelai.tech">

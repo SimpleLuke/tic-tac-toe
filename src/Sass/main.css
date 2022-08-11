@@ -178,7 +178,7 @@ body {
   left: 189px;
   width: 32px;
 }
-.home-container .btn-newgame-cpu {
+.home-container .btn-newgame-cpu, .home-container .btn-newgame-multi {
   width: 327px;
   height: 56px;
   border: none;
@@ -193,10 +193,16 @@ body {
   letter-spacing: 1px;
   padding: 14px 76px 22px 76px;
   position: relative;
+  margin-bottom: 16px;
 }
-.home-container .btn-newgame-cpu:active {
+.home-container .btn-newgame-cpu:active, .home-container .btn-newgame-multi:active {
   box-shadow: none;
   top: 8px;
+}
+.home-container .btn-newgame-multi {
+  padding: 14px 59px 22px 61px;
+  background-color: #31c3bd;
+  box-shadow: inset 0px -8px #118c87;
 }
 
 nav {

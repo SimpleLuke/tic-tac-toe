@@ -73,6 +73,9 @@ const Home = (props) => {
       <button onClick={props.cpuMode} className="btn-newgame-cpu">
         NEW GAME (VS CPU)
       </button>
+      <button onClick={props.multiMode} className="btn-newgame-multi">
+        NEW GAME (VS PLAYER)
+      </button>
     </div>
   );
 };

@@ -151,9 +151,16 @@
     @include font(HeadingXS);
     padding: 14px 76px 22px 76px;
     position: relative;
+    margin-bottom: 16px;
     &:active {
       box-shadow: none;
       top: 8px;
     }
+  }
+  .btn-newgame-multi {
+    @extend .btn-newgame-cpu;
+    padding: 14px 59px 22px 61px;
+    background-color: $cross-shadow-clr;
+    box-shadow: inset 0px -8px $cross-hover-shadow-clr;
   }
 }
