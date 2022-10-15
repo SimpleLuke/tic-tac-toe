@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Click here](https://steady-kelpie-2829ee.netlify.app/)
+- Live Site: [Click here](https://steady-kelpie-2829ee.netlify.app/)
 
 ### Built with
 
@@ -51,6 +51,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## Author
 
 - Website - [Luke Lai](https://lukelai.tech/)
-- Frontend Mentor - [@SimpleLuke](https://www.frontendmentor.io/profile/SimpleLuke)
+- LinkedIn - [Luke Lai](https://www.linkedin.com/in/luke-lai-309a3522b/)
 - Twitter - [@LukeLaiDev](https://www.twitter.com/LukeLaiDev)
 
