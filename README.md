@@ -1,5 +1,5 @@
 
-This is a tic-Tac-Toe game built with the React framework .
+This Tic-Tac-Toe game built with the React framework .
 
 ## Table of contents
 
